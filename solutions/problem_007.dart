@@ -15,15 +15,13 @@ main(List<String> args) {
   print('$end: $count');
 }
 
-bool isPrime(int x) {
-  if (x < 2) {
-    return false;
-  } else {
-    for (int i = 2; i < x; i++) {
-      if (x % i == 0) {
-        return false;
-      }
+bool isPrime(int n) {
+  if (n < 2) return false;
+  for (int i = 2; i <= n / 2; i++) {
+    if (n % i == 0) {
+      return false;
     }
   }
   return true;
 }
+
