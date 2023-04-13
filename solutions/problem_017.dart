@@ -66,32 +66,32 @@ void main(List<String> args) {
 }
 
 String numberLetterCounter(int number) {
-  final w = <String>[];
+  final words = <String>[];
 
   if (number == 1000) {
-    w.add('one thousand');
+    words.add('one thousand');
   }
 
   if (100 <= number && number < 1000) {
-    w.add(hundreds[number ~/ 100]);
+    words.add(hundreds[number ~/ 100]);
     if (number % 100 != 0) {
-      w.add('and');
+      words.add('and');
     }
     number = number % 100;
   }
   if (number == 10 || (20 <= number && number < 100)) {
-    w.add(tens[number ~/ 10]);
+    words.add(tens[number ~/ 10]);
     number = number % 10;
   }
   if (11 <= number && number < 20) {
-    w.add(teens[number % 10]);
+    words.add(teens[number % 10]);
   } else if (0 < number && number <= 9) {
-    if (w.isNotEmpty && tens.contains(w[w.length - 1])) {
-      w[w.length - 1] = w[w.length - 1] + '-' + ones[number % 10];
+    if (words.isNotEmpty && tens.contains(words[words.length - 1])) {
+      words[words.length - 1] = words[words.length - 1] + '-' + ones[number % 10];
     } else {
-      w.add(ones[number % 10]);
+      words.add(ones[number % 10]);
     }
   }
 
-  return w.join(' ').toString();
+  return words.join(' ').toString();
 }
