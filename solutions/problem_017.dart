@@ -54,8 +54,6 @@ List<String> hundreds = [
 ];
 
 void main(List<String> args) {
-  final numbers = <String>[];
-
   int sum = 0;
   for (int i = 1; i <= 1000; i++) {
     // print(numberLetterCounter(i));
@@ -87,7 +85,8 @@ String numberLetterCounter(int number) {
     words.add(teens[number % 10]);
   } else if (0 < number && number <= 9) {
     if (words.isNotEmpty && tens.contains(words[words.length - 1])) {
-      words[words.length - 1] = words[words.length - 1] + '-' + ones[number % 10];
+      words[words.length - 1] =
+          words[words.length - 1] + '-' + ones[number % 10];
     } else {
       words.add(ones[number % 10]);
     }

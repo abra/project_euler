@@ -2,19 +2,19 @@
 // https://projecteuler.net/problem=3
 
 main(List<String> args) {
-  num number = 600851475143;
+  int number = 600851475143;
 
   print(factor(number));
 }
 
-num factor(num n) {
-  num i = 2;
+int factor(int n) {
+  int i = 2;
   var res = <int>[];
 
   while (i <= n) {
     if (n % i == 0) {
       res.add(i);
-      n /= i;
+      n = n ~/ i;
       i = 2;
     }
     i++;
@@ -22,4 +22,3 @@ num factor(num n) {
 
   return res.last;
 }
-
