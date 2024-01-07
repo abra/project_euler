@@ -1,15 +1,17 @@
-// Summation of primes 
+// Summation of primes
 // https://projecteuler.net/problem=10
 
-import 'dart:math';
-
-bool isPrime(int n) {
+bool isPrime(int n, List<int> primes) {
   if (n <= 1) {
     return false;
   }
 
-  for (int i = 2; i <= sqrt(n); i++) {
-    if (n % i == 0) {
+  for (int prime in primes) {
+    if (prime * prime > n) {
+      break;
+    }
+
+    if (n % prime == 0) {
       return false;
     }
   }
@@ -20,9 +22,11 @@ bool isPrime(int n) {
 void main() {
   int limit = 2000000;
   int sum = 0;
+  List<int> primes = [];
 
   for (int i = 2; i < limit; i++) {
-    if (isPrime(i)) {
+    if (isPrime(i, primes)) {
+      primes.add(i);
       sum += i;
     }
   }
