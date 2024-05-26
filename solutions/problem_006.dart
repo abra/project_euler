@@ -7,8 +7,8 @@ main(List<String> args) {
   int squared = 0;
   int result = 0;
 
-  sum = (n * (n + 1) / 2).toInt();
-  squared = ((n * (n + 1) * (2 * n + 1)) / 6).toInt();
+  sum = n * (n + 1) ~/ 2;
+  squared = (n * (n + 1) * (2 * n + 1)) ~/ 6;
 
   result = sum * sum - squared;
   print(result);
