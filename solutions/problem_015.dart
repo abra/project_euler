@@ -7,7 +7,7 @@ main(List<String> args) {
 
   for (int i = 0; i < size; i++) {
     p *= (2 * size) - i;
-    p = (p / (i + 1)).toInt();
+    p = p ~/ (i + 1);
   }
 
   print(p);
